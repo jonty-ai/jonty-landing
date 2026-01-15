@@ -7,7 +7,7 @@ const features = [
   {
     title: 'Smart Alerts',
     description:
-      'I deliver opportunities straight to your inbox. Matched to your business, so you only see what matters.',
+      'I deliver opportunities straight to your email inbox. Matched to your business, so you only see what matters.',
   },
   {
     title: 'Expert Guidance',
@@ -41,7 +41,7 @@ export function Features() {
             How I Help
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Procurement doesn&apos;t have to be overwhelming. Let me find the right opportunities for your business.
+            Government contracts shouldn&apos;t require a PhD to understand. I cut through the jargon and find opportunities that match your business.
           </p>
         </motion.div>
 

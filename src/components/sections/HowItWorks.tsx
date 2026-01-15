@@ -15,7 +15,7 @@ const steps = [
     icon: UserPlus,
     title: 'Tell me about your business',
     description:
-      'Share your business details via chat, phone, or WhatsApp—I\'ll set up your profile with your capabilities, certifications, and what contracts you\'re looking for.',
+      'Share your business details via chat, phone, or email—I\'ll set up your profile with your capabilities, certifications, and what contracts you\'re looking for.',
   },
   {
     step: 2,
