@@ -73,7 +73,7 @@ export function EmailForm({
 
   if (status === 'success') {
     return (
-      <div className={cn('flex items-center gap-2 text-jonty-500', className)}>
+      <div className={cn('flex items-center justify-center gap-2 text-jonty-500', className)}>
         <CheckCircle2 className="h-5 w-5" />
         <span className="font-medium">Thanks! We&apos;ll be in touch soon.</span>
       </div>
