@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { UserPlus, Sparkles, Trophy } from 'lucide-react'
-import { ChatMockup } from '../ui/ChatMockup'
-import { ProfileMockup } from '../ui/ProfileMockup'
+import { EmailAlertMockup } from '../ui/EmailAlertMockup'
+import { CallTranscriptMockup } from '../ui/CallTranscriptMockup'
 import { DashboardMockup } from '../ui/DashboardMockup'
 import { cn } from '@/lib/utils'
 
@@ -15,7 +15,7 @@ const steps = [
     icon: UserPlus,
     title: 'Tell me about your business',
     description:
-      'Share your business details via chat, phone, or WhatsApp—I\'ll set up your profile with your capabilities, certifications, and what contracts you\'re looking for.',
+      'Book a quick onboarding call—I\'ll learn about your capabilities, certifications, and what contracts you\'re looking for.',
   },
   {
     step: 2,
@@ -34,8 +34,8 @@ const steps = [
 ]
 
 const visuals = {
-  1: <ProfileMockup />,
-  2: <ChatMockup />,
+  1: <CallTranscriptMockup />,
+  2: <EmailAlertMockup />,
   3: <DashboardMockup />,
 }
 
