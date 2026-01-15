@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { PT_Serif } from 'next/font/google'
 import './globals.css'
+import { FaviconCycler } from '@/components/ui'
 
 const ptSerif = PT_Serif({
   subsets: ['latin'],
@@ -64,6 +65,11 @@ export const metadata: Metadata = {
       'Your AI procurement assistant. Discover and win UK government contracts with AI-powered tender alerts and expert guidance.',
     images: ['/images/og-image.png'],
   },
+  icons: {
+    icon: [
+      { url: '/favicons/favicon-j.svg', type: 'image/svg+xml' },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -74,6 +80,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={ptSerif.className}>
       <body className="min-h-screen bg-background antialiased">
+        <FaviconCycler />
         {children}
       </body>
     </html>

@@ -50,7 +50,7 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-            className="text-display-xl font-bold text-white"
+            className="text-display-xl font-bold text-midnight"
           >
             Hi, I&apos;m Jonty.
           </motion.h1>
@@ -60,7 +60,7 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-            className="mt-3 text-xl md:text-2xl text-white/90"
+            className="mt-3 text-xl md:text-2xl text-midnight/90"
           >
             Making public sector procurement simple.
           </motion.p>
@@ -111,11 +111,11 @@ export function Hero() {
             className="mt-10"
           >
             <Button asChild size="lg" variant="midnight">
-              <Link href="#waitlist">Get Started</Link>
+              <Link href="#waitlist">Get Early Access</Link>
             </Button>
 
             {/* Channel icons */}
-            <div className="mt-6 flex items-center justify-center gap-5 text-white/60">
+            <div className="mt-6 inline-flex items-center justify-center gap-5 text-white/60 bg-white/10 rounded-xl px-6 py-3">
               <span className="text-sm">Available via</span>
               {/* Chat */}
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
