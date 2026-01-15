@@ -45,7 +45,12 @@ export function EmailForm({
     setErrorMessage('')
 
     try {
-      const response = await fetch('https://formspree.io/f/xykgzbvz', {
+      const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID
+      if (!formspreeId) {
+        throw new Error('Formspree ID not configured')
+      }
+
+      const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
