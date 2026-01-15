@@ -115,10 +115,10 @@ export function Header() {
                 {/* Orange divider + Email */}
                 <div className="mt-6 pt-6 border-t border-[#FF6B35]">
                   <a
-                    href="mailto:hi@askjonty.ai"
+                    href="mailto:jonty@askjonty.ai"
                     className="block px-4 py-2 text-base text-slate-600 hover:text-[#FF6B35] transition-colors"
                   >
-                    hi@askjonty.ai
+                    jonty@askjonty.ai
                   </a>
                 </div>
               </nav>

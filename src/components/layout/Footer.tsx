@@ -48,10 +48,10 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li>
                 <a
-                  href="mailto:Hi@askJonty.AI"
+                  href="mailto:jonty@askjonty.ai"
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  hi@askjonty.ai
+                  jonty@askjonty.ai
                 </a>
               </li>
             </ul>
