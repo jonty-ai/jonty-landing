@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { PT_Serif } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const ptSerif = PT_Serif({
@@ -75,6 +76,7 @@ export default function RootLayout({
     <html lang="en" className={ptSerif.className}>
       <body className="min-h-screen bg-background antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   )
