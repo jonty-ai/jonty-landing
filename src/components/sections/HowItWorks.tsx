@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '../layout/Container'
 import { UserPlus, Sparkles, Trophy } from 'lucide-react'
-import { ChatMockup } from '../ui/ChatMockup'
+import { EmailAlertMockup } from '../ui/EmailAlertMockup'
 import { CallTranscriptMockup } from '../ui/CallTranscriptMockup'
 import { DashboardMockup } from '../ui/DashboardMockup'
 import { cn } from '@/lib/utils'
@@ -35,7 +35,7 @@ const steps = [
 
 const visuals = {
   1: <CallTranscriptMockup />,
-  2: <ChatMockup />,
+  2: <EmailAlertMockup />,
   3: <DashboardMockup />,
 }
 
