@@ -34,17 +34,10 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 18px; /* Larger base for better readability */
 }
 
-/* Scale up for large desktops */
-@media (min-width: 1536px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-/* Scale up more for very large/4K displays */
+/* Scale up for very large/4K displays */
 @media (min-width: 1920px) {
   html {
     font-size: 20px;

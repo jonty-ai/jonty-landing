@@ -67,8 +67,8 @@ export function AudioPlayer({ className }: AudioPlayerProps) {
             className={cn(
               'w-[3px] rounded-full transition-all duration-150',
               isPlaying
-                ? 'bg-[#3D3D80]'
-                : 'bg-[#14142B]'
+                ? 'bg-accent-orange/70'
+                : 'bg-accent-orange'
             )}
             style={{
               height: `${height * 100}%`,

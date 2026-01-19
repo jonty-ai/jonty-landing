@@ -43,7 +43,7 @@ export function HowItWorks() {
   const [activeStep, setActiveStep] = useState(1)
 
   return (
-    <section className="py-20 md:py-28 bg-white" id="how-it-works">
+    <section className="py-20 md:py-28 bg-cream" id="how-it-works">
       <Container>
         {/* Header */}
         <motion.div
@@ -53,10 +53,10 @@ export function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="text-display-md font-bold text-[#14142B]">
+          <h2 className="text-display-lg font-bold text-midnight">
             How I Work
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="mt-4 text-body text-slate-600">
             Get started with me in minutes. See results in days.
           </p>
         </motion.div>
@@ -80,10 +80,10 @@ export function HowItWorks() {
                   <button
                     onClick={() => setActiveStep(step.step)}
                     className={cn(
-                      'w-full text-left p-4 rounded-xl transition-all duration-300',
+                      'w-full text-left p-5 rounded-xl transition-all duration-300',
                       isActive
-                        ? 'bg-slate-50 border border-slate-200'
-                        : 'hover:bg-slate-50/50'
+                        ? 'bg-white shadow-lg shadow-midnight/5 border border-slate-200'
+                        : 'bg-white/50 hover:bg-white/80'
                     )}
                   >
                     <div className="flex gap-4">
@@ -92,14 +92,14 @@ export function HowItWorks() {
                         className={cn(
                           'flex-shrink-0 h-12 w-12 rounded-full border-2 flex items-center justify-center transition-colors',
                           isActive
-                            ? 'border-[#14142B] bg-slate-100'
+                            ? 'border-midnight bg-cream'
                             : 'border-slate-300 bg-white'
                         )}
                       >
                         <Icon
                           className={cn(
                             'h-5 w-5 transition-colors',
-                            isActive ? 'text-[#14142B]' : 'text-slate-400'
+                            isActive ? 'text-midnight' : 'text-slate-400'
                           )}
                         />
                       </div>
@@ -108,8 +108,8 @@ export function HowItWorks() {
                       <div className="flex-1">
                         <h3
                           className={cn(
-                            'text-lg font-bold transition-colors',
-                            isActive ? 'text-[#14142B]' : 'text-slate-600'
+                            'text-lg font-semibold transition-colors',
+                            isActive ? 'text-midnight' : 'text-slate-600'
                           )}
                         >
                           {step.step}. {step.title}
@@ -136,7 +136,7 @@ export function HowItWorks() {
                         <svg
                           className={cn(
                             'h-5 w-5 transition-transform duration-300',
-                            isActive ? 'rotate-180 text-[#14142B]' : 'text-slate-400'
+                            isActive ? 'rotate-180 text-midnight' : 'text-slate-400'
                           )}
                           fill="none"
                           viewBox="0 0 24 24"

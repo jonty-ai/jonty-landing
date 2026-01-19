@@ -33,8 +33,8 @@ export function Header() {
             <div className="flex lg:flex-1">
               <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Jonty</span>
-                <span className="text-2xl font-bold text-foreground tracking-tight">
-                  Jonty
+                <span className="text-2xl font-bold text-foreground tracking-tight font-logo">
+                  Jonty<span className="text-accent-orange">.</span>
                 </span>
               </Link>
             </div>
@@ -55,7 +55,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-base font-semibold text-[#14142B] transition-colors hover:text-[#FF6B35]"
+                  className="text-base font-semibold text-midnight transition-colors hover:text-accent-orange"
                 >
                   {item.name}
                 </Link>
@@ -84,8 +84,8 @@ export function Header() {
               <div className="flex items-center justify-between px-6 py-4">
                 <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                   <span className="sr-only">Jonty</span>
-                  <span className="text-2xl font-bold text-foreground tracking-tight">
-                    Jonty
+                  <span className="text-2xl font-bold text-foreground tracking-tight font-logo">
+                    Jonty<span className="text-accent-orange">.</span>
                   </span>
                 </Link>
                 <button
@@ -113,10 +113,10 @@ export function Header() {
                 </div>
 
                 {/* Orange divider + Email */}
-                <div className="mt-6 pt-6 border-t border-[#FF6B35]">
+                <div className="mt-6 pt-6 border-t border-accent-orange">
                   <a
                     href="mailto:jonty@askjonty.ai"
-                    className="block px-4 py-2 text-base text-slate-600 hover:text-[#FF6B35] transition-colors"
+                    className="block px-4 py-2 text-base text-slate-600 hover:text-accent-orange transition-colors"
                   >
                     jonty@askjonty.ai
                   </a>

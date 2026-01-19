@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Container } from '../layout/Container'
 import { AudioPlayer } from '../ui/AudioPlayer'
-import { BlobShape } from '../ui/BlobShape'
 import { Button } from '../ui/Button'
 
 const fadeInUp = {
@@ -21,27 +20,8 @@ const fadeInUp = {
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen pt-24 pb-12 md:pt-28 md:pb-16 flex items-center overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%)',
-      }}
+      className="relative min-h-screen pt-24 pb-12 md:pt-28 md:pb-16 flex items-center overflow-hidden bg-cream"
     >
-      {/* Animated Blob Shapes */}
-      <BlobShape
-        variant={1}
-        className="text-white w-[600px] h-[600px] -top-40 -left-40 animate-blob opacity-30"
-      />
-      <BlobShape
-        variant={2}
-        className="text-white w-[500px] h-[500px] top-1/2 -right-32 animate-blob opacity-20"
-        style={{ animationDelay: '2s' }}
-      />
-      <BlobShape
-        variant={3}
-        className="text-white w-[400px] h-[400px] -bottom-20 left-1/4 animate-blob opacity-25"
-        style={{ animationDelay: '4s' }}
-      />
-
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           {/* Main Intro */}
@@ -50,9 +30,9 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-            className="text-display-xl font-bold text-midnight"
+            className="text-display-hero font-bold text-midnight font-logo"
           >
-            Hi, I&apos;m Jonty.
+            Hi, I&apos;m Jonty<span className="text-accent-orange">.</span>
           </motion.h1>
 
           <motion.p
@@ -60,9 +40,9 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
-            className="mt-3 text-xl md:text-2xl text-midnight/90"
+            className="mt-3 text-body-lg text-midnight/90"
           >
-            Making public sector procurement simple.
+            I make public sector procurement simple.
           </motion.p>
 
           {/* Audio Player Section */}
@@ -82,7 +62,7 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="mt-3 text-white/70 text-sm italic"
+            className="mt-3 text-midnight/70 text-sm italic"
           >
             Let me tell you how I work.
           </motion.p>
@@ -95,10 +75,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.35, ease: [0.25, 0.4, 0.25, 1] }}
             className="mt-10 max-w-2xl mx-auto"
           >
-            <p className="text-white text-base md:text-lg leading-relaxed">
-              Unlike regular chat AIs, I work proactively—finding opportunities,
-              sending alerts, and keeping you informed. Reach me via chat, email,
-              or phone—wherever works for you.
+            <p className="text-midnight text-body leading-relaxed">
+              I work proactively. Finding opportunities, sending alerts, and guiding you
+              through procurement. Chat, email, or just pick up the phone.
             </p>
           </motion.div>
 
@@ -110,12 +89,12 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="mt-10"
           >
-            <Button asChild size="lg" variant="midnight">
+            <Button asChild size="lg">
               <Link href="#waitlist">Get Early Access</Link>
             </Button>
 
             {/* Channel icons */}
-            <div className="mt-6 inline-flex items-center justify-center gap-5 text-white/60 bg-white/10 rounded-xl px-6 py-3">
+            <div className="mt-6 inline-flex items-center justify-center gap-5 text-midnight/60 bg-midnight/5 rounded-xl px-6 py-3">
               <span className="text-sm">Available via</span>
               {/* Chat */}
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
