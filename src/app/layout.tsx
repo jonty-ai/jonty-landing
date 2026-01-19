@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
-import { PT_Serif } from 'next/font/google'
+import { Inter_Tight, PT_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { FaviconCycler } from '@/components/ui'
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter-tight',
+  display: 'swap',
+})
 
 const ptSerif = PT_Serif({
   subsets: ['latin'],
@@ -79,8 +86,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={ptSerif.className}>
-      <body className="min-h-screen bg-background antialiased">
+    <html lang="en" className={`${interTight.variable} ${ptSerif.variable}`}>
+      <body className="min-h-screen bg-background antialiased font-sans">
         <FaviconCycler />
         {children}
         <Analytics />

@@ -1,7 +1,6 @@
 export { Button } from './Button'
 export { Input } from './Input'
 export { Card, CardIcon, CardTitle, CardDescription } from './Card'
-export { BlobShape } from './BlobShape'
 export { DocumentIllustration } from './DocumentIllustration'
 export { AudioPlayer } from './AudioPlayer'
 export { EmailAlertMockup } from './EmailAlertMockup'
