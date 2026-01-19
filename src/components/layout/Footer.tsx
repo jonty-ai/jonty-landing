@@ -18,8 +18,9 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           <div className="col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold text-foreground tracking-tight">
-                Jonty
+              <span className="sr-only">Jonty</span>
+              <span className="text-2xl font-bold text-foreground tracking-tight font-logo">
+                Jonty<span className="text-accent-orange">.</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">

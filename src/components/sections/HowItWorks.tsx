@@ -3,30 +3,30 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '../layout/Container'
-import { UserPlus, Sparkles, Trophy } from 'lucide-react'
 import { EmailAlertMockup } from '../ui/EmailAlertMockup'
 import { CallTranscriptMockup } from '../ui/CallTranscriptMockup'
 import { DashboardMockup } from '../ui/DashboardMockup'
+import { HandDrawnUnderline, HandDrawnStar, HandDrawnIcon } from '../illustrations'
 import { cn } from '@/lib/utils'
 
 const steps = [
   {
     step: 1,
-    icon: UserPlus,
+    iconVariant: 'person' as const,
     title: 'Tell me about your business',
     description:
       'Book a quick onboarding call—I\'ll learn about your capabilities, certifications, and what contracts you\'re looking for.',
   },
   {
     step: 2,
-    icon: Sparkles,
+    iconVariant: 'search' as const,
     title: 'I find you opportunities',
     description:
       'I scan government portals and procurement sources daily, sending you relevant contracts and Meet the Buyer event alerts that match your profile.',
   },
   {
     step: 3,
-    icon: Trophy,
+    iconVariant: 'trophy' as const,
     title: 'Win more contracts',
     description:
       'With my proactive alerts, expert guidance, and timely reminders, you\'ll be better prepared to submit winning bids and grow your public sector business.',
@@ -53,10 +53,15 @@ export function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <h2 className="text-display-lg font-bold text-midnight">
-            How I Work
-          </h2>
-          <p className="mt-4 text-body text-slate-600">
+          <div className="inline-block relative">
+            <h2 className="text-display-lg font-bold text-midnight">
+              How I Work
+            </h2>
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2">
+              <HandDrawnUnderline width={140} height={10} delay={0.3} />
+            </div>
+          </div>
+          <p className="mt-6 text-body text-slate-600">
             Get started with me in minutes. See results in days.
           </p>
         </motion.div>
@@ -67,7 +72,6 @@ export function HowItWorks() {
           <div className="space-y-4">
             {steps.map((step) => {
               const isActive = activeStep === step.step
-              const Icon = step.icon
 
               return (
                 <motion.div
@@ -87,7 +91,7 @@ export function HowItWorks() {
                     )}
                   >
                     <div className="flex gap-4">
-                      {/* Circular outlined icon */}
+                      {/* Hand-drawn icon in circular container */}
                       <div
                         className={cn(
                           'flex-shrink-0 h-12 w-12 rounded-full border-2 flex items-center justify-center transition-colors',
@@ -96,11 +100,13 @@ export function HowItWorks() {
                             : 'border-slate-300 bg-white'
                         )}
                       >
-                        <Icon
-                          className={cn(
-                            'h-5 w-5 transition-colors',
-                            isActive ? 'text-midnight' : 'text-slate-400'
-                          )}
+                        <HandDrawnIcon
+                          variant={step.iconVariant}
+                          size={22}
+                          color={isActive ? '#1A1F36' : '#94a3b8'}
+                          strokeWidth={1.5}
+                          delay={step.step * 0.15}
+                          animated={isActive}
                         />
                       </div>
 
@@ -163,8 +169,33 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:sticky lg:top-32"
+            className="lg:sticky lg:top-32 relative"
           >
+            {/* Decorative floating stars */}
+            <div className="hidden lg:block">
+              <HandDrawnStar
+                variant="sparkle"
+                size={20}
+                className="absolute -top-6 -right-4"
+                delay={0.5}
+                floatDuration={3.5}
+              />
+              <HandDrawnStar
+                variant="burst"
+                size={16}
+                className="absolute top-1/4 -left-8"
+                delay={1}
+                floatDuration={4}
+              />
+              <HandDrawnStar
+                variant="sparkle"
+                size={18}
+                className="absolute bottom-1/4 -right-6"
+                delay={1.5}
+                floatDuration={3}
+              />
+            </div>
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
