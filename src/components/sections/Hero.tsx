@@ -20,24 +20,8 @@ const fadeInUp = {
 export function Hero() {
   return (
     <section
-      className="relative min-h-screen pt-24 pb-12 md:pt-28 md:pb-16 flex items-center overflow-hidden"
-      style={{
-        background: 'linear-gradient(135deg, #FA5D29 0%, #FFAA8A 100%)',
-      }}
+      className="relative min-h-screen pt-24 pb-12 md:pt-28 md:pb-16 flex items-center overflow-hidden bg-cream"
     >
-      {/* Static gradient mesh for visual depth */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 opacity-40"
-          style={{
-            background: `
-              radial-gradient(ellipse 60% 40% at 15% 25%, rgba(255,255,255,0.2) 0%, transparent 50%),
-              radial-gradient(ellipse 50% 35% at 85% 75%, rgba(255,255,255,0.15) 0%, transparent 45%)
-            `
-          }}
-        />
-      </div>
-
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           {/* Main Intro */}
@@ -46,9 +30,9 @@ export function Hero() {
             initial="initial"
             animate="animate"
             transition={{ duration: 0.6, ease: [0.25, 0.4, 0.25, 1] }}
-            className="text-display-hero font-bold text-midnight"
+            className="text-display-hero font-bold text-midnight font-logo"
           >
-            Hi, I&apos;m Jonty.
+            Hi, I&apos;m Jonty<span className="text-accent-orange">.</span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +42,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.4, 0.25, 1] }}
             className="mt-3 text-body-lg text-midnight/90"
           >
-            Making public sector procurement simple.
+            I make public sector procurement simple.
           </motion.p>
 
           {/* Audio Player Section */}
@@ -105,12 +89,12 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             className="mt-10"
           >
-            <Button asChild size="lg" variant="midnight">
+            <Button asChild size="lg">
               <Link href="#waitlist">Get Early Access</Link>
             </Button>
 
             {/* Channel icons */}
-            <div className="mt-6 inline-flex items-center justify-center gap-5 text-midnight/60 bg-white/10 rounded-xl px-6 py-3">
+            <div className="mt-6 inline-flex items-center justify-center gap-5 text-midnight/60 bg-midnight/5 rounded-xl px-6 py-3">
               <span className="text-sm">Available via</span>
               {/* Chat */}
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
