@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Container } from '../layout/Container'
 import { AudioPlayer } from '../ui/AudioPlayer'
 import { Button } from '../ui/Button'
+import { HandDrawnStar, HandDrawnFlower, HandDrawnHeart, HandDrawnSpiral } from '../illustrations'
 
 const fadeInUp = {
   initial: {
@@ -22,6 +23,81 @@ export function Hero() {
     <section
       className="relative min-h-screen pt-24 pb-12 md:pt-28 md:pb-16 flex items-center overflow-hidden bg-cream"
     >
+      {/* Background floating decorations - scattered throughout */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60">
+        {/* Scattered across the hero - varying depths */}
+        <HandDrawnFlower
+          size={38}
+          className="absolute top-[12%] left-[8%] hidden md:block"
+          color="#FF6A00"
+          delay={0.2}
+          floatDuration={4.5}
+        />
+        <HandDrawnStar
+          variant="sparkle"
+          size={24}
+          className="absolute top-[22%] left-[28%] hidden lg:block"
+          delay={0.6}
+          floatDuration={4}
+        />
+        <HandDrawnHeart
+          size={22}
+          className="absolute top-[8%] right-[35%] hidden lg:block"
+          color="#FF6A00"
+          delay={1}
+          floatDuration={3.5}
+        />
+        <HandDrawnSpiral
+          size={26}
+          className="absolute top-[18%] right-[12%] hidden md:block"
+          color="#FF6A00"
+          delay={0.4}
+          floatDuration={4.2}
+        />
+        <HandDrawnStar
+          variant="burst"
+          size={20}
+          className="absolute top-[42%] left-[6%] hidden lg:block"
+          delay={1.2}
+          floatDuration={3.8}
+        />
+        <HandDrawnFlower
+          size={32}
+          className="absolute top-[55%] right-[8%] hidden md:block"
+          color="#FF6A00"
+          delay={0.8}
+          floatDuration={4}
+        />
+        <HandDrawnHeart
+          size={20}
+          className="absolute bottom-[35%] left-[22%] hidden lg:block"
+          color="#FF6A00"
+          delay={1.4}
+          floatDuration={3.5}
+        />
+        <HandDrawnStar
+          variant="sparkle"
+          size={22}
+          className="absolute bottom-[28%] right-[25%] hidden lg:block"
+          delay={0.9}
+          floatDuration={4.2}
+        />
+        <HandDrawnSpiral
+          size={24}
+          className="absolute bottom-[15%] left-[10%] hidden md:block"
+          color="#FF6A00"
+          delay={1.6}
+          floatDuration={4}
+        />
+        <HandDrawnStar
+          variant="burst"
+          size={26}
+          className="absolute bottom-[10%] right-[15%] hidden md:block"
+          delay={0.5}
+          floatDuration={3.5}
+        />
+      </div>
+
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           {/* Main Intro */}
