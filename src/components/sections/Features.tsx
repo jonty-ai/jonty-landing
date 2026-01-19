@@ -106,23 +106,25 @@ export function Features() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="p-6 rounded-xl border border-white/10 bg-white/[0.03]"
             >
-              {/* Icon */}
+              {/* Icon in circular container */}
               <div className="mb-4">
-                {feature.icon === 'handshake' ? (
-                  <HandDrawnTree
-                    size={32}
-                    color={index % 2 === 0 ? '#FF6A00' : '#60A5FA'}
-                    delay={0.2 + index * 0.1}
-                  />
-                ) : (
-                  <HandDrawnIcon
-                    variant={feature.icon}
-                    size={32}
-                    color={index % 2 === 0 ? '#FF6A00' : '#60A5FA'}
-                    strokeWidth={1.5}
-                    delay={0.2 + index * 0.1}
-                  />
-                )}
+                <div className="h-12 w-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center">
+                  {feature.icon === 'handshake' ? (
+                    <HandDrawnTree
+                      size={22}
+                      color={index % 2 === 0 ? '#FF6A00' : '#60A5FA'}
+                      delay={0.2 + index * 0.1}
+                    />
+                  ) : (
+                    <HandDrawnIcon
+                      variant={feature.icon}
+                      size={22}
+                      color={index % 2 === 0 ? '#FF6A00' : '#60A5FA'}
+                      strokeWidth={1.5}
+                      delay={0.2 + index * 0.1}
+                    />
+                  )}
+                </div>
               </div>
 
               {/* Title with underline accent - alternating colors */}
