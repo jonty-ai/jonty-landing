@@ -135,6 +135,18 @@ export function HowItWorks() {
                             </motion.p>
                           )}
                         </AnimatePresence>
+
+                        {/* Mobile-only visual - shows directly below description */}
+                        {isActive && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, delay: 0.1 }}
+                            className="mt-4 lg:hidden"
+                          >
+                            {visuals[step.step as keyof typeof visuals]}
+                          </motion.div>
+                        )}
                       </div>
 
                       {/* Chevron indicator */}
@@ -169,7 +181,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:sticky lg:top-32 relative"
+            className="hidden lg:block lg:sticky lg:top-32 relative"
           >
             {/* Decorative floating stars */}
             <div className="hidden lg:block">
