@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Container } from '../layout/Container'
 import { AudioPlayer } from '../ui/AudioPlayer'
 import { Button } from '../ui/Button'
-import { HandDrawnStar, HandDrawnFlower, HandDrawnHeart, HandDrawnSpiral } from '../illustrations'
+import { HandDrawnStar, HandDrawnHeart, HandDrawnSpiral } from '../illustrations'
 
 const fadeInUp = {
   initial: {
@@ -26,8 +26,8 @@ export function Hero() {
       {/* Background floating decorations - scattered throughout */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60">
         {/* Scattered across the hero - varying depths */}
-        <HandDrawnFlower
-          size={38}
+        <HandDrawnSpiral
+          size={24}
           className="absolute top-[12%] left-[8%] hidden md:block"
           color="#FF6A00"
           delay={0.2}
@@ -61,8 +61,8 @@ export function Hero() {
           delay={1.2}
           floatDuration={3.8}
         />
-        <HandDrawnFlower
-          size={32}
+        <HandDrawnHeart
+          size={24}
           className="absolute top-[55%] right-[8%] hidden md:block"
           color="#FF6A00"
           delay={0.8}
