@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-const LETTERS = ['j', 'o', 'n', 't', 'y'] as const
+const LETTERS = ['j', 'o', 'n', 't', 'y', 'dot'] as const
 const CYCLE_INTERVAL_MS = 700
 const FAVICON_PATH = '/favicons/favicon-'
 
