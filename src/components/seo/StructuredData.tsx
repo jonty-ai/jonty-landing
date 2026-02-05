@@ -21,6 +21,8 @@ const organizationSchema = {
   sameAs: [
     'https://www.linkedin.com/company/jonty/',
     'https://twitter.com/askjonty',
+    'https://www.instagram.com/askjonty',
+    'https://www.tiktok.com/@askjonty',
   ],
 }
 
