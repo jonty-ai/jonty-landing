@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { FaviconCycler } from '@/components/ui'
+import { StructuredData } from '@/components/seo'
 
 const interTight = Inter_Tight({
   subsets: ['latin'],
@@ -21,20 +22,38 @@ const ptSerif = PT_Serif({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://askjonty.com'),
-  title: 'Jonty - Win More Government Contracts',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://askjonty.ai'),
+  title: 'Jonty - AI Procurement Assistant for Government Contracts',
   description:
-    'Your AI procurement assistant. Discover and win UK government contracts with AI-powered tender alerts, expert guidance, and event discovery.',
+    'Jonty is a GovTech AI startup helping SMEs win government contracts. Get AI-powered tender alerts, procurement guidance, event discovery, and partner matching for public sector opportunities.',
   keywords: [
+    // GovTech & positioning (global + UK for investor discovery)
+    'GovTech',
+    'GovTech UK',
+    'UK GovTech',
+    'GovTech startup',
+    'government technology',
+    'public sector technology',
+    // Core product
+    'AI procurement assistant',
+    'procurement automation',
+    'tender management software',
+    'bid management platform',
+    // Use cases
     'government contracts',
-    'UK procurement',
+    'public procurement',
     'tender alerts',
     'public sector',
-    'bid assistance',
+    'SME government contracts',
+    // Features
     'Find a Tender',
     'Meet the Buyer',
     'procurement guidance',
-    'AI procurement assistant',
+    'bid assistance',
+    // Competitor alternatives
+    'Stotles alternative',
+    'Tussell alternative',
+    'AutogenAI alternative',
   ],
   authors: [{ name: 'Jonty' }],
   creator: 'Jonty',
@@ -50,14 +69,17 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: '/',
     siteName: 'Jonty',
-    title: 'Jonty - Win More Government Contracts',
+    title: 'Jonty - AI Procurement Assistant for Government Contracts',
     description:
-      'Your AI procurement assistant. Discover and win UK government contracts with AI-powered tender alerts and expert guidance.',
+      'GovTech AI startup helping SMEs win government contracts with AI-powered tender alerts, procurement guidance, and event discovery.',
     images: [
       {
         url: '/images/og-image.png',
@@ -69,16 +91,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jonty - Win More Government Contracts',
+    title: 'Jonty - AI Procurement Assistant for Government Contracts',
     description:
-      'Your AI procurement assistant. Discover and win UK government contracts with AI-powered tender alerts and expert guidance.',
+      'GovTech AI startup helping SMEs win government contracts with AI-powered tender alerts, procurement guidance, and event discovery.',
     images: ['/images/og-image.png'],
   },
   icons: {
     icon: [
-      { url: '/favicons/favicon-j.svg', type: 'image/svg+xml' },
+      { url: '/favicons/favicon-dot.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
     ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
   },
+  manifest: '/manifest.json',
 }
 
 export default function RootLayout({
@@ -88,6 +113,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${interTight.variable} ${ptSerif.variable}`}>
+      <head>
+        <StructuredData />
+      </head>
       <body className="min-h-screen bg-background antialiased font-sans">
         <FaviconCycler />
         {children}

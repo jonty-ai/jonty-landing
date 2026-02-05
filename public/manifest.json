@@ -1,0 +1,21 @@
+{
+  "name": "Jonty - AI Procurement Assistant",
+  "short_name": "Jonty",
+  "description": "AI-powered procurement assistant for UK government contracts",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FA5D29",
+  "icons": [
+    {
+      "src": "/favicons/favicon-dot.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
