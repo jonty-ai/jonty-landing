@@ -19,7 +19,7 @@ const organizationSchema = {
     addressCountry: 'GB',
   },
   sameAs: [
-    'https://www.linkedin.com/company/askjonty',
+    'https://www.linkedin.com/company/jonty/',
     'https://twitter.com/askjonty',
   ],
 }
