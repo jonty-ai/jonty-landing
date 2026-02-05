@@ -170,7 +170,7 @@ export function Hero() {
             </Button>
 
             {/* Channel icons */}
-            <div className="mt-6 inline-flex items-center justify-center gap-5 text-midnight/60 bg-midnight/5 rounded-xl px-6 py-3">
+            <div className="mt-6 inline-flex items-center justify-center gap-5 text-midnight/70 bg-midnight/5 rounded-xl px-6 py-3">
               <span className="text-sm">Available via</span>
               {/* Chat */}
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
