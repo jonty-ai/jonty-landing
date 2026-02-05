@@ -1,0 +1,8 @@
+# Jonty - AI Procurement Assistant
+# https://askjonty.ai
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://askjonty.ai/sitemap.xml
