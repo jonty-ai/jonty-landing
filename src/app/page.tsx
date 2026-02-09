@@ -1,5 +1,5 @@
 import { Header, Footer } from '@/components/layout'
-import { Hero, Features, ComingSoon, HowItWorks, EmailCapture } from '@/components/sections'
+import { Hero, Features, ComingSoon, HowItWorks, About, EmailCapture } from '@/components/sections'
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <Features />
         <ComingSoon />
         <HowItWorks />
+        <About />
         <EmailCapture />
       </main>
       <Footer />

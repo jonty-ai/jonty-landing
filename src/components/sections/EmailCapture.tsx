@@ -7,7 +7,7 @@ import { HandDrawnUnderline, HandDrawnStar } from '../illustrations'
 
 export function EmailCapture() {
   return (
-    <section className="relative py-20 md:py-28 bg-midnight overflow-hidden" id="waitlist">
+    <section className="relative py-20 md:py-28 bg-midnight overflow-hidden" id="get-started">
       {/* Subtle orange radial glow at top */}
       <div
         className="absolute inset-x-0 top-0 h-64 opacity-30"
@@ -62,7 +62,7 @@ export function EmailCapture() {
         >
           <div className="inline-block relative">
             <h2 className="text-display-lg font-bold text-white">
-              Get Early Access
+              Get Started
             </h2>
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2">
               <HandDrawnUnderline
@@ -74,12 +74,12 @@ export function EmailCapture() {
             </div>
           </div>
           <p className="mt-6 text-body text-slate-300">
-            Be among the first to work with me. Join UK businesses who are getting ahead in government procurement.
+            Join UK businesses already using AI to discover and win government contracts.
           </p>
 
           <div className="mt-10 max-w-md mx-auto">
             <EmailForm
-              buttonText="Join the Waitlist"
+              buttonText="Get Started"
               placeholder="Enter your work email"
             />
             <p className="mt-4 text-body-sm text-slate-400">
@@ -92,13 +92,13 @@ export function EmailCapture() {
               <svg className="h-5 w-5 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Free during beta
+              Free to get started
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-5 w-5 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Priority onboarding
+              Personalised onboarding
             </div>
             <div className="flex items-center gap-2">
               <svg className="h-5 w-5 text-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">

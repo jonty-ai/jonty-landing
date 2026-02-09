@@ -166,7 +166,7 @@ export function Hero() {
             className="mt-10"
           >
             <Button asChild size="lg">
-              <Link href="#waitlist">Get Early Access</Link>
+              <Link href="#get-started">Get Started</Link>
             </Button>
 
             {/* Channel icons */}
