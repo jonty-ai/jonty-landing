@@ -27,10 +27,8 @@ export const metadata: Metadata = {
   description:
     'Jonty is a GovTech AI startup helping SMEs win government contracts. Get AI-powered tender alerts, procurement guidance, event discovery, and partner matching for public sector opportunities.',
   keywords: [
-    // GovTech & positioning (global + UK for investor discovery)
+    // GovTech & positioning
     'GovTech',
-    'GovTech UK',
-    'UK GovTech',
     'GovTech startup',
     'government technology',
     'public sector technology',
@@ -74,7 +72,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_GB',
+    locale: 'en_US',
     url: '/',
     siteName: 'Jonty',
     title: 'Jonty - AI Procurement Assistant for Government Contracts',

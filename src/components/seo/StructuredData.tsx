@@ -6,7 +6,7 @@ const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/og-image.png`,
   description:
-    'AI-powered procurement platform helping UK businesses discover and win government contracts.',
+    'AI-powered procurement platform helping businesses discover and win government contracts.',
   foundingDate: '2024',
   founders: [
     {
@@ -18,10 +18,6 @@ const organizationSchema = {
       name: 'Kuldeep Daftary',
     },
   ],
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'GB',
-  },
   sameAs: [
     'https://www.linkedin.com/company/jonty/',
     'https://twitter.com/askjonty',
@@ -99,7 +95,7 @@ const webPageSchema = {
   description:
     'GovTech AI startup helping SMEs win government contracts with AI-powered tender alerts, procurement guidance, and event discovery.',
   url: SITE_URL,
-  inLanguage: 'en-GB',
+  inLanguage: 'en',
   isPartOf: {
     '@type': 'WebSite',
     name: 'Jonty',

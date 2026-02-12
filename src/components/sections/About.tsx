@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { HandDrawnStar, HandDrawnUnderline } from '../illustrations'
 import { Container } from '../layout/Container'
-import { HandDrawnUnderline, HandDrawnStar } from '../illustrations'
 
 export function About() {
   return (
@@ -53,29 +53,18 @@ export function About() {
 
           <div className="space-y-6 text-body text-slate-700 leading-relaxed">
             <p>
-              Jonty is an AI-powered procurement platform built to help UK businesses discover and
+              Jonty is an AI-powered procurement platform built to help businesses discover and
               win government contracts. Navigating procurement has always been complex,
               time-consuming, and stacked against smaller businesses. We&apos;re changing that.
             </p>
             <p>
               Our AI agent proactively finds relevant tender opportunities, sends timely alerts,
               helps you write winning bids, and guides you through the entire procurement process.
-              Whether you prefer the dashboard, chat, email, or phone, Jonty works the way you do.
+              Whether you prefer the phone, email, chat, or dashboard, Jonty works the way you do.
               No more trawling through portals or missing deadlines.
             </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-10 text-center"
-          >
-            <p className="text-sm text-slate-500">
-              Jonty AI Inc. (Delaware) · Based in London, UK
-            </p>
-          </motion.div>
         </motion.div>
       </Container>
     </section>
