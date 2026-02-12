@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", "schedule:weekends"],
+
+  // Group all non-major updates into a single PR
+  "minor": {
+    "groupName": "all non-major",
+    "groupSlug": "all-non-major"
+  },
+  "patch": {
+    "groupName": "all non-major",
+    "groupSlug": "all-non-major"
+  },
+
+  // Automerge minor+patch for dev dependencies (types, lint, build tools)
+  "packageRules": [
+    {
+      "description": "Automerge minor+patch dev dependency updates",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "description": "Group Next.js + its ESLint config for major updates (must stay in sync)",
+      "matchPackageNames": ["next", "eslint-config-next"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "next.js"
+    },
+    {
+      "description": "Group React ecosystem for major updates (must move in lockstep)",
+      "matchPackageNames": ["react", "react-dom", "@types/react", "@types/react-dom"],
+      "matchUpdateTypes": ["major"],
+      "groupName": "react"
+    },
+    {
+      "description": "Treat lucide-react 0.x minor bumps as breaking (semver 0.x convention)",
+      "matchPackageNames": ["lucide-react"],
+      "separateMinorPatch": true
+    }
+  ],
+
+  // Cap concurrent PRs to avoid flooding
+  "prConcurrentLimit": 5
+}
