@@ -2,13 +2,17 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://askjonty.ai'
 
 const organizationSchema = {
   '@type': 'Organization',
-  name: 'Jonty',
+  name: 'Jonty AI Inc.',
   url: SITE_URL,
   logo: `${SITE_URL}/images/og-image.png`,
   description:
-    'GovTech AI startup helping SMEs win government contracts through AI-powered procurement assistance.',
+    'AI-powered procurement platform helping UK businesses discover and win government contracts.',
   foundingDate: '2024',
   founders: [
+    {
+      '@type': 'Person',
+      name: 'Christopher Maitland',
+    },
     {
       '@type': 'Person',
       name: 'Kuldeep Daftary',
@@ -37,7 +41,7 @@ const softwareApplicationSchema = {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'GBP',
-    description: 'Free early access',
+    description: 'Free to get started',
   },
   featureList: [
     'AI-powered tender alerts',

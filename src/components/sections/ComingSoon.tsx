@@ -78,7 +78,7 @@ export function ComingSoon() {
         >
           <div className="inline-block relative">
             <h2 className="text-display-lg font-bold text-midnight">
-              Coming Soon
+              What&apos;s Next
             </h2>
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2">
               <HandDrawnUnderline
@@ -90,7 +90,7 @@ export function ComingSoon() {
             </div>
           </div>
           <p className="mt-6 text-body text-slate-600">
-            More ways I&apos;ll help you win
+            More ways I&apos;m learning to help you win
           </p>
         </motion.div>
 

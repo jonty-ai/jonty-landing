@@ -9,6 +9,7 @@ import { Container } from './Container'
 const navigation = [
   { name: 'Features', href: '#features' },
   { name: 'How I Work', href: '#how-it-works' },
+  { name: 'About', href: '#about' },
 ]
 
 export function Header() {
@@ -64,7 +65,7 @@ export function Header() {
 
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <Button asChild variant="midnight">
-                <Link href="#waitlist">Get Early Access</Link>
+                <Link href="#get-started">Get Started</Link>
               </Button>
             </div>
           </nav>
