@@ -24,7 +24,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Your AI procurement assistant. Discover and win UK government contracts with ease.
+              Your AI procurement assistant. Discover and win government contracts with ease.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export function Footer() {
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <span className="inline-flex h-2 w-2 rounded-full bg-jonty-500" />
-              Built for UK Public Sector
+              Built for Public Sector
             </div>
           </div>
         </div>

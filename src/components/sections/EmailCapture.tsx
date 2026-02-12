@@ -74,7 +74,7 @@ export function EmailCapture() {
             </div>
           </div>
           <p className="mt-6 text-body text-slate-300">
-            Join UK businesses already using AI to discover and win government contracts.
+            Join businesses already using AI to discover and win government contracts.
           </p>
 
           <div className="mt-10 max-w-md mx-auto">

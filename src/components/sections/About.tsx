@@ -53,7 +53,7 @@ export function About() {
 
           <div className="space-y-6 text-body text-slate-700 leading-relaxed">
             <p>
-              Jonty is an AI-powered procurement platform built to help UK businesses discover and
+              Jonty is an AI-powered procurement platform built to help businesses discover and
               win government contracts. Navigating procurement has always been complex,
               time-consuming, and stacked against smaller businesses. We&apos;re changing that.
             </p>
@@ -65,17 +65,6 @@ export function About() {
             </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-10 text-center"
-          >
-            <p className="text-sm text-slate-500">
-              Jonty AI Inc. (Delaware) · Based in London, UK
-            </p>
-          </motion.div>
         </motion.div>
       </Container>
     </section>
