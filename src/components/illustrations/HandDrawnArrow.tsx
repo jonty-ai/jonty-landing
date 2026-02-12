@@ -63,7 +63,7 @@ export function HandDrawnArrow({
         whileInView: { pathLength: 1, opacity: 1 },
         viewport: { once: true },
         transition: {
-          pathLength: { duration, delay, ease: 'easeOut' },
+          pathLength: { duration, delay, ease: 'easeOut' as const },
           opacity: { duration: 0.2, delay },
         },
       }
@@ -75,7 +75,7 @@ export function HandDrawnArrow({
         whileInView: { pathLength: 1, opacity: 1 },
         viewport: { once: true },
         transition: {
-          pathLength: { duration: 0.3, delay: delay + duration * 0.7, ease: 'easeOut' },
+          pathLength: { duration: 0.3, delay: delay + duration * 0.7, ease: 'easeOut' as const },
           opacity: { duration: 0.2, delay: delay + duration * 0.7 },
         },
       }
