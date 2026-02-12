@@ -1,13 +1,102 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  :root {
-    --background: 255 255 255;
-    --foreground: 0 0 0;
+@theme {
+  /* Colors - Primary Orange */
+  --color-jonty-50: #fff7ed;
+  --color-jonty-100: #ffedd5;
+  --color-jonty-200: #fed7aa;
+  --color-jonty-300: #fdba74;
+  --color-jonty-400: #FF8C42;
+  --color-jonty-500: #FF6A00;
+  --color-jonty-600: #e65f00;
+  --color-jonty-700: #cc5500;
+  --color-jonty-800: #994000;
+  --color-jonty-900: #662b00;
+
+  /* Accent colors */
+  --color-accent-orange: #FA5D29;
+  --color-accent-blue: #49B3FC;
+
+  /* Deep Midnight Blue */
+  --color-midnight: #1A1A2E;
+  --color-midnight-light: #1e1e3f;
+  --color-midnight-dark: #0a0a15;
+
+  /* Brand Indigo */
+  --color-brand-indigo: #3D3D80;
+  --color-brand-indigo-light: #5252a3;
+  --color-brand-indigo-dark: #2e2e60;
+
+  /* Backgrounds & Foregrounds */
+  --color-cream: #FAF9F6;
+  --color-background: #ffffff;
+  --color-foreground: #1A1A2E;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #525252;
+
+  /* Font Families */
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-logo: var(--font-pt-serif), Georgia, serif;
+
+  /* Font Sizes */
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5;
+
+  --text-body: 1.125rem;
+  --text-body--line-height: 1.6;
+
+  --text-body-lg: 1.5rem;
+  --text-body-lg--line-height: 1.5;
+
+  --text-display-hero: clamp(2.5rem, 6vw, 4.75rem);
+  --text-display-hero--line-height: 1.05;
+  --text-display-hero--letter-spacing: -0.02em;
+
+  --text-display-lg: clamp(2rem, 4.5vw, 3.5rem);
+  --text-display-lg--line-height: 1.15;
+  --text-display-lg--letter-spacing: -0.015em;
+
+  --text-display-md: clamp(1.625rem, 3.5vw, 2.625rem);
+  --text-display-md--line-height: 1.2;
+  --text-display-md--letter-spacing: -0.01em;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.5s ease-out forwards;
+  --animate-fade-in-up: fadeInUp 0.6s ease-out forwards;
+  --animate-slide-up: slideUp 0.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
 
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+/* Custom gradient utilities */
+@utility bg-jonty-gradient {
+  background-image: linear-gradient(135deg, #FA5D29 0%, #FFAA8A 100%);
+}
+
+@utility bg-jonty-gradient-vertical {
+  background-image: linear-gradient(180deg, #FA5D29 0%, #FFAA8A 100%);
+}
+
+@layer base {
   body {
     @apply bg-background text-foreground antialiased;
     font-synthesis: none;
@@ -21,20 +110,9 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .transform-gpu {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
-}
-
 html {
   scroll-behavior: smooth;
-  font-size: 18px; /* Larger base for better readability */
+  font-size: 18px;
 }
 
 /* Scale up for very large/4K displays */
