@@ -53,11 +53,9 @@ export function About() {
 
           <div className="space-y-6 text-body text-slate-700 leading-relaxed">
             <p>
-              Jonty is an AI-powered procurement platform built to help UK businesses discover and win
-              government contracts. The public sector spends over{' '}
-              <span className="font-semibold text-midnight">&pound;300 billion</span> a year on
-              goods and services, but navigating procurement has always been complex, time-consuming,
-              and stacked against smaller businesses. We&apos;re changing that.
+              Jonty is an AI-powered procurement platform built to help UK businesses discover and
+              win government contracts. Navigating procurement has always been complex,
+              time-consuming, and stacked against smaller businesses. We&apos;re changing that.
             </p>
             <p>
               Our AI agent proactively finds relevant tender opportunities, sends timely alerts,
@@ -67,39 +65,11 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="p-6 rounded-xl border border-midnight/10 bg-white"
-            >
-              <a href="https://www.linkedin.com/in/chris-m-990251264/" target="_blank" rel="noopener noreferrer" className="font-semibold text-lg text-midnight hover:text-accent-orange transition-colors">
-                <h3 className="inline">Christopher Maitland</h3>
-              </a>
-              <p className="text-sm text-accent-orange font-medium mt-1">Co-founder &amp; CEO</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="p-6 rounded-xl border border-midnight/10 bg-white"
-            >
-              <a href="https://www.linkedin.com/in/kuldeep-daftary-612690a/" target="_blank" rel="noopener noreferrer" className="font-semibold text-lg text-midnight hover:text-accent-orange transition-colors">
-                <h3 className="inline">Kuldeep Daftary</h3>
-              </a>
-              <p className="text-sm text-accent-orange font-medium mt-1">Co-founder &amp; CTO</p>
-            </motion.div>
-          </div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-10 text-center"
           >
             <p className="text-sm text-slate-500">
