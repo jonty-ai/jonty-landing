@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { HandDrawnStar, HandDrawnUnderline } from '../illustrations'
 import { Container } from '../layout/Container'
-import { HandDrawnUnderline, HandDrawnStar } from '../illustrations'
 
 export function About() {
   return (
@@ -60,7 +60,7 @@ export function About() {
             <p>
               Our AI agent proactively finds relevant tender opportunities, sends timely alerts,
               helps you write winning bids, and guides you through the entire procurement process.
-              Whether you prefer the dashboard, chat, email, or phone, Jonty works the way you do.
+              Whether you prefer the phone, email, chat, or dashboard, Jonty works the way you do.
               No more trawling through portals or missing deadlines.
             </p>
           </div>
