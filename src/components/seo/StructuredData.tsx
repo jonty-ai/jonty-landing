@@ -6,7 +6,7 @@ const organizationSchema = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/og-image.png`,
   description:
-    'AI-powered procurement platform helping businesses discover and win government contracts.',
+    'AI procurement specialist helping businesses discover and win government contracts.',
   foundingDate: '2024',
   founders: [
     {
