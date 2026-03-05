@@ -53,15 +53,15 @@ export function About() {
 
           <div className="space-y-6 text-body text-slate-700 leading-relaxed">
             <p>
-              Jonty is an AI-powered procurement platform built to help businesses discover and
+              Jonty is an AI procurement specialist built to help businesses discover and
               win government contracts. Navigating procurement has always been complex,
-              time-consuming, and stacked against smaller businesses. We&apos;re changing that.
+              time-consuming, and stacked against smaller businesses. Jonty changes that.
             </p>
             <p>
-              Our AI agent proactively finds relevant tender opportunities, sends timely alerts,
-              helps you write winning bids, and guides you through the entire procurement process.
-              Whether you prefer the phone, email, chat, or dashboard, Jonty works the way you do.
-              No more trawling through portals or missing deadlines.
+              Jonty proactively finds relevant tender opportunities, sends you timely alerts,
+              helps write winning bids, and guides you through the entire procurement process.
+              Whether you prefer the phone, email, chat, or dashboard — Jonty meets you
+              where you are. No more trawling through portals or missing deadlines.
             </p>
           </div>
 
