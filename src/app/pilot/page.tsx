@@ -122,9 +122,8 @@ export default function PilotPage() {
           className="mb-10"
         >
           <span className="font-logo text-3xl font-bold tracking-tight text-white">
-            Jonty
+            Jonty<span className="text-jonty-400">.</span>
           </span>
-          <span className="ml-1.5 text-jonty-400 font-logo text-3xl">.</span>
         </motion.div>
 
         {/* Progress bar */}
