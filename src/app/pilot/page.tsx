@@ -76,6 +76,16 @@ function normalisePhone(raw: string): string {
   return digits
 }
 
+function extractErrorMessage(value: unknown, fallback: string): string {
+  if (typeof value === 'string') return value
+  if (value && typeof value === 'object') {
+    const obj = value as Record<string, unknown>
+    if (typeof obj.message === 'string') return obj.message
+    if (typeof obj.error === 'string') return obj.error
+  }
+  return fallback
+}
+
 /* ─────────────────────────── Page ─────────────────────────── */
 
 export default function PilotPage() {
@@ -245,14 +255,14 @@ function PasswordStep({ onSuccess }: { onSuccess: () => void }) {
     setError('')
     setLoading(true)
     try {
-      const res = await fetch('/api/verify-password', {
+      const res = await fetch('/api/verify-password/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password: data.password }),
       })
       const json = await res.json()
       if (!res.ok || !json.success) {
-        setError(json.error || 'Invalid password')
+        setError(extractErrorMessage(json.error, 'Invalid password'))
         return
       }
       onSuccess()
@@ -288,6 +298,7 @@ function PasswordStep({ onSuccess }: { onSuccess: () => void }) {
             id="password"
             type="password"
             placeholder="Enter pilot password"
+            autoComplete="off"
             autoFocus
             error={!!errors.password}
             {...register('password', { required: 'Password is required' })}
@@ -346,7 +357,7 @@ function RegistrationStep({
     const normalisedPhone = normalisePhone(data.phone)
 
     try {
-      const res = await fetch('/api/register', {
+      const res = await fetch('/api/register/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -362,11 +373,10 @@ function RegistrationStep({
       const json = await res.json()
 
       if (!res.ok || !json.success) {
-        const msg =
-          json.error ||
-          json.data?.message ||
-          'Registration failed. Please try again.'
-        setError(msg)
+        setError(
+          extractErrorMessage(json.error, '') ||
+          extractErrorMessage(json.data, 'Registration failed. Please try again.')
+        )
         return
       }
 
@@ -643,14 +653,17 @@ function OtpStep({
     setError('')
     setLoading(true)
     try {
-      const res = await fetch('/api/register/verify-otp', {
+      const res = await fetch('/api/register/verify-otp/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ phone, code }),
       })
       const json = await res.json()
       if (!res.ok || !json.success) {
-        setError(json.error || json.data?.message || 'Invalid code. Please try again.')
+        setError(
+          extractErrorMessage(json.error, '') ||
+          extractErrorMessage(json.data, 'Invalid code. Please try again.')
+        )
         return
       }
       onSuccess()
