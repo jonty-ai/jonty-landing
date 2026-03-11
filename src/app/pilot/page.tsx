@@ -31,14 +31,24 @@ const registrationSchema = z
     phone: z
       .string()
       .min(1, 'Phone number is required')
-      .regex(
-        /^(?:\+44|0)(?:\d\s?){9,10}$/,
-        'Please enter a valid UK phone number'
+      .transform((val) => val.replace(/\s+/g, ''))
+      .pipe(
+        z
+          .string()
+          .regex(
+            /^(?:\+44|0)\d{9,10}$/,
+            'Please enter a valid UK phone number (e.g. 07700 900000)'
+          )
       ),
     website: z
       .string()
-      .url('Please enter a valid URL')
-      .or(z.literal(''))
+      .transform((val) => {
+        const trimmed = val.trim()
+        if (!trimmed) return ''
+        if (!/^https?:\/\//i.test(trimmed)) return `https://${trimmed}`
+        return trimmed
+      })
+      .pipe(z.string().url('Please enter a valid URL').or(z.literal('')))
       .optional(),
     callPreference: z.enum(['call_me_now', 'schedule_a_call'], {
       message: 'Please choose a call preference',
@@ -468,15 +478,9 @@ function RegistrationStep({
           <Input
             id="phone"
             type="tel"
-            placeholder="+44 7700 900000"
+            placeholder="07700 900000"
             error={!!errors.phone}
-            {...register('phone', {
-              required: 'Phone number is required',
-              pattern: {
-                value: /^(?:\+44|0)(?:\d\s?){9,10}$/,
-                message: 'Please enter a valid UK phone number',
-              },
-            })}
+            {...register('phone')}
           />
           {errors.phone && (
             <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>
@@ -488,8 +492,8 @@ function RegistrationStep({
           <Label htmlFor="website">Website</Label>
           <Input
             id="website"
-            type="url"
-            placeholder="https://acme.co.uk"
+            type="text"
+            placeholder="acme.co.uk"
             error={!!errors.website}
             {...register('website')}
           />
