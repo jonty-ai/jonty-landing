@@ -25,21 +25,26 @@ const passwordSchema = z.object({
 
 const registrationSchema = z
   .object({
-    name: z.string().min(1, 'Name is required').max(200),
-    companyName: z.string().min(1, 'Company name is required').max(200),
-    email: z.string().email('Please enter a valid email'),
+    name: z.string().min(1, 'Name is required').max(200).transform((v) => v.trim()),
+    companyName: z.string().min(1, 'Company name is required').max(200).transform((v) => v.trim()),
+    email: z.string().email('Please enter a valid email').transform((v) => v.trim().toLowerCase()),
     phone: z
       .string()
       .min(1, 'Phone number is required')
-      .transform((val) => val.replace(/\s+/g, ''))
+      .transform((val) => {
+        const stripped = val.replace(/[\s\-()]/g, '')
+        if (stripped.startsWith('+44')) return stripped.slice(3)
+        return stripped.replace(/^0+/, '')
+      })
       .pipe(
         z
           .string()
           .regex(
-            /^(?:\+44|0)\d{9,10}$/,
-            'Please enter a valid UK phone number (e.g. 07700 900000)'
+            /^\d{9,10}$/,
+            'Please enter a valid UK phone number (e.g. 7700 900000)'
           )
-      ),
+      )
+      .transform((val) => '+44' + val),
     website: z
       .string()
       .transform((val) => {
@@ -79,12 +84,6 @@ const slideVariants = {
 }
 
 /* ─────────────────────────── Helpers ─────────────────────────── */
-
-function normalisePhone(raw: string): string {
-  const digits = raw.replace(/\s+/g, '')
-  if (digits.startsWith('0')) return '+44' + digits.slice(1)
-  return digits
-}
 
 function extractErrorMessage(value: unknown, fallback: string): string {
   if (typeof value === 'string') return value
@@ -363,20 +362,20 @@ function RegistrationStep({
     setError('')
     setLoading(true)
 
-    const normalisedPhone = normalisePhone(data.phone)
+    const validated = parsed.data
 
     try {
       const res = await fetch('/api/register/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: data.name.trim(),
-          companyName: data.companyName.trim(),
-          email: data.email.trim().toLowerCase(),
-          phone: normalisedPhone,
-          website: data.website?.trim() || undefined,
-          callPreference: data.callPreference,
-          scheduledAt: data.scheduledAt || undefined,
+          name: validated.name,
+          companyName: validated.companyName,
+          email: validated.email,
+          phone: validated.phone,
+          website: validated.website || undefined,
+          callPreference: validated.callPreference,
+          scheduledAt: validated.scheduledAt || undefined,
         }),
       })
       const json = await res.json()
@@ -389,7 +388,7 @@ function RegistrationStep({
         return
       }
 
-      onSuccess(normalisedPhone)
+      onSuccess(validated.phone)
     } catch {
       setError('Something went wrong. Please try again.')
     } finally {
@@ -475,13 +474,24 @@ function RegistrationStep({
           <Label htmlFor="phone" required>
             Phone number
           </Label>
-          <Input
-            id="phone"
-            type="tel"
-            placeholder="07700 900000"
-            error={!!errors.phone}
-            {...register('phone')}
-          />
+          <div className="flex">
+            <span
+              className={cn(
+                'flex h-12 items-center rounded-l-full border border-r-0 bg-slate-50 pl-5 pr-3 text-base font-medium text-foreground select-none',
+                errors.phone ? 'border-red-500' : 'border-slate-200'
+              )}
+            >
+              +44
+            </span>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder="7700 900000"
+              className="rounded-l-none"
+              error={!!errors.phone}
+              {...register('phone')}
+            />
+          </div>
           {errors.phone && (
             <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>
           )}
